@@ -1,0 +1,223 @@
+============================= test session starts =============================
+platform win32 -- Python 3.7.0b3, pytest-5.3.2, py-1.8.0, pluggy-0.13.1
+rootdir: C:\Users\Racter\AppData\Local\Programs\Python\Python37
+collected 41 items
+
+test_gemini_API_NewOrder.py 
+
+##########  Executing Positive test suite where symbol = btcusd, with no optional parameters ##########
+
+Test Result: test_newOrder_btcusd()
+
+{'order_id': '387519815', 'id': '387519815', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '0.00', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752400', 'timestampms': 1577752400519, 'is_live': True, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'options': [], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_btcusd_price9999()
+
+{'order_id': '387519838', 'id': '387519838', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '7205.220485851', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752401', 'timestampms': 1577752401756, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '9999.00', 'original_amount': '5', 'remaining_amount': '0'}
+
+.Test Result: test_newOrder_btcusd_amount7()
+
+{'order_id': '387519872', 'id': '387519872', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '7206.007649115714285714285714285714', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752402', 'timestampms': 1577752402971, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '7', 'options': [], 'price': '9999.00', 'original_amount': '7', 'remaining_amount': '0'}
+
+.Test Result: test_newOrder_btcusd_sell()
+
+{'order_id': '387519898', 'id': '387519898', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '7198.1803608912', 'side': 'sell', 'type': 'exchange limit', 'timestamp': '1577752404', 'timestampms': 1577752404209, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '0'}
+
+.
+
+##########  Executing Negative test suite where required parameters are missing  ##########
+
+Test Result: test_newOrder_btcusd_missingSymbol()
+
+{'result': 'error', 'reason': 'InvalidSymbol', 'message': "Received bad symbol '' but expected a supported symbol from ['BTCUSD', 'ETHBTC', 'ETHUSD', 'BCHUSD', 'BCHBTC', 'BCHETH', 'LTCUSD', 'LTCBTC', 'LTCETH', 'LTCBCH', 'ZECUSD', 'ZECBTC', 'ZECETH', 'ZECBCH', 'ZECLTC']"}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_missingAmount()
+
+{'result': 'error', 'reason': 'InvalidQuantity', 'message': 'Invalid quantity for symbol BTCUSD: '}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_missingPrice()
+
+{'result': 'error', 'reason': 'InvalidPrice', 'message': 'Invalid price for symbol BTCUSD: '}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_missingSide()
+
+{'result': 'error', 'reason': 'InvalidSide', 'message': "Invalid side for symbol BTCUSD: ''"}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_missingType()
+
+{'result': 'error', 'reason': 'InvalidOrderType', 'message': "Invalid order type for symbol BTCUSD: ''"}
+Status code =  400
+
+.
+
+##########  Executing Negative test suite where endpoint/URL is invalid  ##########
+
+Test Result: test_newOrder_btcusd_invalidEndpoint()
+
+{'result': 'error', 'reason': 'EndpointMismatch', 'message': 'EndpointMismatch'}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_invalidBaseURL()
+
+new order =  NULL
+response =  Invalid base URL
+
+.
+
+##########  Executing Positive test suite to test most other symbols, with no optional parameters ##########
+
+Test Result: test_newOrder_ethusd()
+
+{'order_id': '387520089', 'id': '387520089', 'symbol': 'ethusd', 'exchange': 'gemini', 'avg_execution_price': '149.31378555', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752414', 'timestampms': 1577752414201, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '0'}
+
+.Test Result: test_newOrder_ethbtc()
+
+{'order_id': '387520116', 'id': '387520116', 'symbol': 'ethbtc', 'exchange': 'gemini', 'avg_execution_price': '0', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752415', 'timestampms': 1577752415471, 'is_live': False, 'is_cancelled': True, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'reason': 'SelfCrossPrevented', 'options': [], 'price': '3633', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_zecusd()
+
+{'order_id': '387520146', 'id': '387520146', 'symbol': 'zecusd', 'exchange': 'gemini', 'avg_execution_price': '28.71', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752416', 'timestampms': 1577752416680, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '0'}
+
+.Test Result: test_newOrder_zecbtc()
+
+{'order_id': '387520161', 'id': '387520161', 'symbol': 'zecbtc', 'exchange': 'gemini', 'avg_execution_price': '0', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752417', 'timestampms': 1577752417888, 'is_live': False, 'is_cancelled': True, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'reason': 'SelfCrossPrevented', 'options': [], 'price': '3633', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_zecltc()
+
+{'order_id': '387520196', 'id': '387520196', 'symbol': 'zecltc', 'exchange': 'gemini', 'avg_execution_price': '0', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752419', 'timestampms': 1577752419125, 'is_live': False, 'is_cancelled': True, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'reason': 'SelfCrossPrevented', 'options': [], 'price': '3633', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_bchusd()
+
+{'order_id': '387520221', 'id': '387520221', 'symbol': 'bchusd', 'exchange': 'gemini', 'avg_execution_price': '208.183994142', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752420', 'timestampms': 1577752420480, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '0'}
+
+.Test Result: test_newOrder_bchbtc()
+
+{'order_id': '387520253', 'id': '387520253', 'symbol': 'bchbtc', 'exchange': 'gemini', 'avg_execution_price': '0.028', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752421', 'timestampms': 1577752421706, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '3633', 'original_amount': '5', 'remaining_amount': '0'}
+
+.Test Result: test_newOrder_bcheth()
+
+{'order_id': '387520278', 'id': '387520278', 'symbol': 'bcheth', 'exchange': 'gemini', 'avg_execution_price': '0', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752422', 'timestampms': 1577752422948, 'is_live': True, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'options': [], 'price': '3633', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_ltcusd()
+
+{'order_id': '387520301', 'id': '387520301', 'symbol': 'ltcusd', 'exchange': 'gemini', 'avg_execution_price': '61.12', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752424', 'timestampms': 1577752424191, 'is_live': False, 'is_cancelled': True, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0.01', 'reason': 'ExceedsPriceLimits', 'options': [], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '4.99'}
+
+.Test Result: test_newOrder_ltcbtc()
+
+{'order_id': '387520321', 'id': '387520321', 'symbol': 'ltcbtc', 'exchange': 'gemini', 'avg_execution_price': '1', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752425', 'timestampms': 1577752425411, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '3633', 'original_amount': '5', 'remaining_amount': '0'}
+
+.Test Result: test_newOrder_ltceth()
+
+{'order_id': '387520346', 'id': '387520346', 'symbol': 'ltceth', 'exchange': 'gemini', 'avg_execution_price': '0.3936', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752426', 'timestampms': 1577752426635, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '3633', 'original_amount': '5', 'remaining_amount': '0'}
+
+.
+
+##########  Executing Negative test suite, with some typos in parms and different symbols ##########
+  ~~~~~~~~~~  NOTE:  Expecting 'Invalid****' reasons in the results  ~~~~~~~~~~
+
+Test Result: test_newOrder_btcusd_symbolMisspelled()
+
+{'result': 'error', 'reason': 'InvalidSymbol', 'message': "Received bad symbol 'bbtcusd' but expected a supported symbol from ['BTCUSD', 'ETHBTC', 'ETHUSD', 'BCHUSD', 'BCHBTC', 'BCHETH', 'LTCUSD', 'LTCBTC', 'LTCETH', 'LTCBCH', 'ZECUSD', 'ZECBTC', 'ZECETH', 'ZECBCH', 'ZECLTC']"}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_amountNegative()
+
+{'result': 'error', 'reason': 'InvalidQuantity', 'message': 'Invalid quantity for symbol BTCUSD: -5'}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_priceNegative()
+
+{'result': 'error', 'reason': 'InvalidPrice', 'message': 'Invalid price for symbol BTCUSD: -3633.00'}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_sideMisspelled()
+
+{'result': 'error', 'reason': 'InvalidSide', 'message': "Invalid side for symbol BTCUSD: 'buyy'"}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_typeMisspelled()
+
+{'result': 'error', 'reason': 'InvalidOrderType', 'message': "Invalid order type for symbol BTCUSD: 'exchang limit'"}
+Status code =  400
+
+.Test Result: test_newOrder_zecbch()
+
+{'result': 'error', 'reason': 'InsufficientFunds', 'message': "Failed to place buy order on symbol 'ZECBCH' for price 3,633 BCH and quantity 5 ZEC due to insufficient funds"}
+Status code =  406
+
+.Test Result: test_newOrder_ltcbch()
+
+{'result': 'error', 'reason': 'InsufficientFunds', 'message': "Failed to place buy order on symbol 'LTCBCH' for price 3,633 BCH and quantity 5 LTC due to insufficient funds"}
+Status code =  406
+
+.
+
+##########  Executing Positive test suite where symbol = btcusd, with optional parameters ##########
+
+Test Result: test_newOrder_btcusd_clientOrderId()
+
+{'order_id': '387520545', 'id': '387520545', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '0.00', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752436', 'timestampms': 1577752436580, 'is_live': True, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'client_order_id': 'Lila_Test1', 'options': ['maker-or-cancel'], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '5'}
+
+.
+Test Result: test_newOrder_btcusd_minAmount()
+
+{'order_id': '387520657', 'id': '387520657', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '0.00', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752437', 'timestampms': 1577752437820, 'is_live': True, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'client_order_id': 'Lila_Test1', 'options': ['maker-or-cancel'], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_btcusd_OptionsMakerCancel()
+
+{'order_id': '387520675', 'id': '387520675', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '0.00', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752439', 'timestampms': 1577752439049, 'is_live': True, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'client_order_id': 'Lila_Test1', 'options': ['maker-or-cancel'], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_btcusd_OptionsImmediateCancel()
+
+{'order_id': '387520703', 'id': '387520703', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '0.00', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752440', 'timestampms': 1577752440535, 'is_live': False, 'is_cancelled': True, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'client_order_id': 'Lila_Test1', 'reason': 'ImmediateOrCancelWouldPost', 'options': ['immediate-or-cancel'], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_btcusd_OptionsFillKill()
+
+{'order_id': '387520728', 'id': '387520728', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '0.00', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752441', 'timestampms': 1577752441776, 'is_live': False, 'is_cancelled': True, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'client_order_id': 'Lila_Test1', 'reason': 'FillOrKillWouldNotFill', 'options': ['fill-or-kill'], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '5'}
+
+.Test Result: test_newOrder_btcusd_stopPrice()
+
+{'order_id': '387520758', 'id': '387520758', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '0.00', 'side': 'buy', 'type': 'exchange limit', 'timestamp': '1577752443', 'timestampms': 1577752443438, 'is_live': True, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '0', 'client_order_id': 'Lila_Test1', 'options': ['maker-or-cancel'], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '5'}
+
+.
+
+##########  Executing Negative test suite, with optional parameters ##########
+  ~~~~~~~~~~  NOTE:  Expecting error messages in the results  ~~~~~~~~~~
+
+Test Result: test_newOrder_btcusd_OptionsAuctionOnly()
+
+{'result': 'error', 'reason': 'AuctionNotOpen', 'message': 'Failed to place an auction-only order because there is no current auction open for BTCUSD'}
+Status code =  400
+
+.Test Result: test_newOrder_btcusd_OptionsIndicationInterest()
+
+{'result': 'error', 'reason': 'InvalidQuantity', 'message': 'Invalid quantity for symbol BTCUSD: 5'}
+Status code =  400
+
+.
+##########  Executing Negative test suite where the Nonce is not increasing ##########
+  ~~~~~~~~~~  NOTE:  Expecting some 'InvalidNonce' reason in the results  ~~~~~~~~~~
+
+Test Result: test_newOrder_btcusd_nonceNoIncrease1()
+
+{'result': 'error', 'reason': 'InvalidNonce', 'message': "Nonce '1577752461000' has not increased since your last call to the Gemini API."}
+
+.Test Result: test_newOrder_btcusd_nonceNoIncrease2()
+
+{'order_id': '387520823', 'id': '387520823', 'symbol': 'btcusd', 'exchange': 'gemini', 'avg_execution_price': '7197.0141878672', 'side': 'sell', 'type': 'exchange limit', 'timestamp': '1577752447', 'timestampms': 1577752447204, 'is_live': False, 'is_cancelled': False, 'is_hidden': False, 'was_forced': False, 'executed_amount': '5', 'options': [], 'price': '3633.00', 'original_amount': '5', 'remaining_amount': '0'}
+
+.Test Result: test_newOrder_btcusd_nonceNoIncrease3()
+
+{'result': 'error', 'reason': 'InvalidNonce', 'message': "Nonce '1577752462000' has not increased since your last call to the Gemini API."}
+
+.Test Result: test_newOrder_btcusd_nonceNoIncrease4()
+
+{'result': 'error', 'reason': 'InvalidNonce', 'message': "Nonce '1577752462000' has not increased since your last call to the Gemini API."}
+
+.
+
+============================= 41 passed in 47.76s =============================
